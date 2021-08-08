@@ -18,6 +18,3 @@ cryptography==3.3.1
 
 # PEP8
 flake8==3.9.0
-
-# AWS
-boto3==1.16.23

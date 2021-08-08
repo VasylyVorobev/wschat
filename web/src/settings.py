@@ -28,14 +28,18 @@ DEBUG = os.environ.get('DEBUG')
 REDIS_HOST = os.environ.get('REDIS_HOST')
 REDIS_PORT = os.environ.get('REDIS_PORT')
 
+SUPERUSER_EMAIL = os.environ.get('SUPERUSER_EMAIL', 'test@test.com')
+SUPERUSER_PASSWORD = os.environ.get('SUPERUSER_PASSWORD', 'test')
+
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(',')
 
-
+AUTH_USER_MODEL = 'main.User'
 # Application definition
 
 INSTALLED_APPS = [
     'channels',
     'chat.apps.ChatConfig',
+    'main.apps.MainConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'main.apps.MainConfig',
+
 ]
 
 MIDDLEWARE = [
